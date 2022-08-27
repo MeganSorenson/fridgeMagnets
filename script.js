@@ -6,7 +6,7 @@ function processText() {
 
     let words = ['.', ',', '!', '?']
 
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 40; i++) {
         let randElement = textArray[Math.floor(Math.random() * textArray.length)]
         words.push(randElement)
     }
@@ -17,7 +17,7 @@ function processText() {
 
 // Globaly create Konva stage
 let width = window.innerWidth;
-let height = window.innerHeight / 2;
+let height = window.innerHeight / 1.5;
 let stage = new Konva.Stage({
     container: 'container',
     width: width,
@@ -31,21 +31,29 @@ function createMagnets(words) {
     // creates movable magnets of the words processed from processText() onto the Konva stage
     // takes in an array of strs, each being a word
     // uses Konva library to make magnets dragable
+    let xCoord = 10
+    let yCoord = 10
     for (let word of words) {
-        console.log(word)
+        // check if need to insert on lower line
+        if (xCoord + (word.length * 20) + 10 >= window.innerWidth) {
+            yCoord += 35
+            xCoord = 10
+        }
+
+        // create rectangle and text and add together
         let rectangle = new Konva.Group({
-            x: 25,
-            y: 25,
-            width: 130,
+            x: xCoord,
+            y: yCoord,
+            width: word.length * 20,
             height: 25,
             rotation: 0,
             draggable: true,
         });
 
         rectangle.add(new Konva.Rect({
-            width: 130,
+            width: word.length * 20,
             height: 25,
-            fill: 'lightblue'
+            fill: '#ECEBD9'
         }));
 
         rectangle.add(new Konva.Text({
@@ -53,12 +61,15 @@ function createMagnets(words) {
             fontSize: 18,
             fontFamily: 'Calibri',
             fill: '#000',
-            width: 130,
+            width: word.length * 20,
             padding: 5,
             align: 'center'
         }));
         rectangleLayer.add(rectangle);
         stage.add(rectangleLayer);
+
+        // adjust x coordinate for next word
+        xCoord += (word.length * 20) + 10
     }
 }
 
@@ -75,6 +86,7 @@ function downloadURI(uri, name) {
     delete link;
 }
 
+// call downloadURI function whenever button is clicked
 document.getElementById('save').addEventListener(
     'click',
     function () {
