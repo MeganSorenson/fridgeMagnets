@@ -9,146 +9,43 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
 
-    <h1>Fridge Memos</h1>
+<h1>Fridge Memos</h1>
 
-    <!-- instruction blurb -->
-    <p>
-        These are the instructions for the fridge memo website!
-    </p>
+<!-- instruction blurb -->
+<p>
+    These are the instructions for the fridge memo website!
+</p>
 
-    <!-- text input for selection of words and submit button -->
-    <form class="text-submit">
-        <input id="input-text" class="text-input" type="text">
-        <input class="submit-button" type="button" value="Select Words" onclick="processText()">
-    </form>
+<!-- text input for selection of words and submit button -->
+<form class="text-submit">
+    <input id="input-text" class="text-input" type="text">
+    <input class="submit-button" type="button" value="Select Words" onclick="processText()">
+</form>
 
-    <!-- selected words (will be drag and drop -> https://www.geeksforgeeks.org/html-drag-and-drop/)-->
-    <p>
-        Here are the words selected! Drag them!
-    </p>
-    <table class="words">
-        <tr>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-            <td>
-                <input class="word" type="image"
-                    src="https://homemadelovely.com/wp-content/uploads/2015/01/WORD-MAGNETS.jpg" style="border: single;"
-                    height="30" width="100">
-            </td>
-        </tr>
-    </table>
+<!-- selected words (will be drag and drop -> https://www.geeksforgeeks.org/html-drag-and-drop/)-->
+<p>
+    Here are the words selected! Drag them!
+</p>
+<div class="container" id="container"></div>
 
-    <!-- drag and drop section -->
+<!-- drag and drop section -->
 
-    <!-- email input box and submit box -->
-    <p>
-        Here's where you send your email to your friend!
-    </p>
+<!-- email input box and submit box -->
+<p>
+    Here's where you send your email to your friend!
+</p>
 
-    <form class="email-submit">
-        <input class="email-input" type="email">
-        <input class="submit-button" type="submit">
-    </form>
+<form class="email-submit">
+    <input class="email-input" type="email">
+    <input class="submit-button" type="submit">
+</form>
 
+<!-- Konva library for moving magnets -->
+<script src="https://unpkg.com/konva@8/konva.min.js"></script>
+<!-- link my js script -->
+<script type="text/javascript" src="script.js"></script>
 
-    <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
