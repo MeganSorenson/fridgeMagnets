@@ -12,9 +12,10 @@ function processText() {
     }
 
     // call function to create magnets on screen
-    createMagnetSpace(words)
+    createMagnets(words)
 }
 
+// Globaly create Konva stage
 let width = window.innerWidth;
 let height = window.innerHeight / 2;
 let stage = new Konva.Stage({
@@ -26,8 +27,8 @@ let stage = new Konva.Stage({
 
 let rectangleLayer = new Konva.Layer();
 
-function createMagnetSpace(words) {
-    // creates movable magnets on a space of the words processed from processText()
+function createMagnets(words) {
+    // creates movable magnets of the words processed from processText() onto the Konva stage
     // takes in an array of strs, each being a word
     // uses Konva library to make magnets dragable
     for (let word of words) {
@@ -60,3 +61,25 @@ function createMagnetSpace(words) {
         stage.add(rectangleLayer);
     }
 }
+
+function downloadURI(uri, name) {
+    // gets the export link for the image
+    // url is the data url of the stage
+    // name is the export name of the file
+    let link = document.createElement('a');
+    link.download = name;
+    link.href = uri;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    delete link;
+}
+
+document.getElementById('save').addEventListener(
+    'click',
+    function () {
+        let dataURL = stage.toDataURL({ pixelRatio: 3 });
+        downloadURI(dataURL, 'fridgeMemo.png');
+    },
+    false
+);
