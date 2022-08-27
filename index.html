@@ -20,8 +20,11 @@
 <!-- text input for selection of words and submit button -->
 <form class="text-submit">
     <input id="input-text" class="text-input" type="text">
-    <input class="submit-button" type="button" value="Select Words" onclick="processText()">
+    <input class="submit-button" type="button" value="Select 50 Words" onclick="processText()">
+    <p>or...</p>
 </form>
+
+<button id="classic-game" class="classic-button" onclick="defaultText()"> Get 50 Classic Words</button>
 
 <!-- selected words (will be drag and drop -> https://www.geeksforgeeks.org/html-drag-and-drop/)-->
 <p>
@@ -37,6 +40,8 @@
 </p>
 
 <button id="save" class="save-button">Save as Image</button>
+
+
 <!-- Konva library for moving magnets -->
 <script src="https://unpkg.com/konva@8/konva.min.js"></script>
 <!-- link my js script -->
