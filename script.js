@@ -117,3 +117,8 @@ document.getElementById('save').addEventListener(
     },
     false
 );
+
+function resetFridge() {
+    stage.clear()
+    stage.destroyChildren()
+}
