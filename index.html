@@ -7,48 +7,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fridge Memos</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap" rel="stylesheet">
 </head>
 
+<body class="body">
+        <h1 class="title">Fridge Poems</h1>
 
-<h1>Fridge Memos</h1>
+        <!-- instruction blurb -->
+        <p class="sub-text">
+            Poems need fridges! Fridges need poems!
+        </p>
 
-<!-- instruction blurb -->
-<p>
-    These are the instructions for the fridge memo website!
-</p>
+        <p class="text1">
+            Start making your own unique fridge poem by providing your own text below (the more text the better!). We'll
+            make
+            word magnets for you using a random selection from the text you provide when you click the 'Select 50
+            Words' button. Or... if you'd rather play with words from a curated library, use the 'Get 50 Classic Words'
+            button
+            below!
+        </p>
 
-<!-- text input for selection of words and submit button -->
-<form class="text-submit">
-    <input id="input-text" class="text-input" type="text">
-    <input class="submit-button" type="button" value="Select 50 Words" onclick="processText()">
-    <p>or...</p>
-</form>
+        <!-- text input for selection of words and submit button -->
+        <form class="text-submit">
+            <input class="text-input" type="text">
+            <input class="button" type="button" value="Select 50 Words" onclick="processText()">
+        </form>
+        <div class="other-button">
+            <button class="button"> or</button>
 
-<button id="classic-game" class="classic-button" onclick="defaultText()"> Get 50 Classic Words</button>
-
-<!-- selected words (will be drag and drop -> https://www.geeksforgeeks.org/html-drag-and-drop/)-->
-<p>
-    Here are the words selected! Drag them!
-</p>
-<button class="clear-button" onclick="resetFridge()">Fridge Reset</button>
-<p></p>
-<!-- drag and drop section -->
-<div class="container" id="container"></div>
-
-
-<!-- save image and share button -->
-<p>
-    Here's where you share your image!
-</p>
-
-<button id="save" class="save-button">Save as Image</button>
+            <button id="classic-game" class="button" onclick="defaultText()"> Get 50 Classic Words</button>
+        </div>
+        <!-- selected words (will be drag and drop -> https://www.geeksforgeeks.org/html-drag-and-drop/)-->
+        <p class="text2">
+            Your word magnets will show up below. Drag them around to make your very own fridge poem! To throw away a
+            magnet,
+            drag it out the bottom of the screen. To start fresh, click the 'Fridge Reset' button. To
+            save your fridge poem, click the 'Save as Image'
+            button at the bottom of the page.
+        </p>
+        <div class="reset-button">
+            <button class="button" onclick="resetFridge()">Fridge Reset</button>
+        </div>
+        <!-- drag and drop section -->
+        <div class="container" id="container"></div>
 
 
-<!-- Konva library for moving magnets -->
-<script src="https://unpkg.com/konva@8/konva.min.js"></script>
-<!-- link my js script -->
-<script type="text/javascript" src="script.js"></script>
+        <!-- save image and share button -->
+        <p>
 
+        </p>
+
+        <button class="button">Save as Image</button>
+
+
+        <!-- Konva library for moving magnets -->
+        <script src="https://unpkg.com/konva@8/konva.min.js"></script>
+        <!-- link my js script -->
+        <script type="text/javascript" src="script.js"></script>
+    
 </body>
 
 </html>
